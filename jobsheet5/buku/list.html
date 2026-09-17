@@ -84,10 +84,16 @@
         <p>
             Daftar buku yang terlambat dikembalikan.
         </p>
-
+        <input
+        type="text"
+        class="search-box"
+        data-target="#tabel-terlambat"
+        placeholder="🔎 Cari buku terlambat...">
         <div class="table-responsive">
 
-            <table class="table table-hover table-bordered align-middle">
+        <table
+        id="tabel-terlambat"
+        class="table table-hover table-bordered align-middle">
 
                 <thead>
 
@@ -267,7 +273,9 @@
         &copy; 2026 SIMPUS-Mini &mdash; Jobsheet 3
     </p>
 
+
 </footer>
+<script src="../assets/js/app.js"></script>
 
 </body>
 

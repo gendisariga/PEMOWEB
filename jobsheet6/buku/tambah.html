@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tambah Buku | SIMPUS-Mini</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <style>
+    .form-card {
+      max-width: 850px;
+      margin: 28px auto;
+      padding: 28px;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 12px 25px rgba(70, 50, 100, .12);
+    }
+
+    .form-title {
+      margin: 0 0 25px;
+      padding-left: 12px;
+      border-left: 6px solid #ef4c9b;
+      color: #713df5;
+      font-size: 28px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: bold;
+      color: #333;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border: 1px solid #d4b4ff;
+      border-radius: 8px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #713df5;
+      box-shadow: 0 0 0 3px rgba(113, 61, 245, .12);
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 8px;
+      padding: 12px 22px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-batal {
+      background: #e5e7eb;
+      color: #333;
+    }
+
+    .btn-simpan {
+      background: #1769e8;
+      color: white;
+    }
+
+    @media (max-width: 650px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="../index.html" class="logo">SIMPUS-Mini</a>
+
+      <div class="menu">
+        <a href="../index.html">Beranda</a>
+        <a href="list.html">Daftar Buku</a>
+        <a href="tambah.html" class="active">Tambah Buku</a>
+        <a href="../anggota/list.html">Daftar Anggota</a>
+        <a href="#">Buku Terlambat</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <form class="form-card" id="form-buku">
+      <h1 class="form-title">Tambah Buku</h1>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="judul">Judul Buku</label>
+          <input type="text" id="judul" required>
+        </div>
+
+        <div class="form-group">
+          <label for="pengarang">Pengarang</label>
+          <input type="text" id="pengarang" required>
+        </div>
+
+        <div class="form-group">
+          <label for="tahun">Tahun Terbit</label>
+          <input type="number" id="tahun" min="1900" max="2100" required>
+        </div>
+
+        <div class="form-group">
+          <label for="stok">Stok Buku</label>
+          <input type="number" id="stok" min="0" required>
+        </div>
+
+        <div class="form-group full">
+          <label for="penerbit">Penerbit</label>
+          <input type="text" id="penerbit" required>
+        </div>
+
+        <div class="form-group full">
+          <label for="deskripsi">Deskripsi</label>
+          <textarea id="deskripsi"></textarea>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <a href="list.html" class="btn btn-batal">Batal</a>
+        <button type="submit" class="btn btn-simpan">Simpan Buku</button>
+      </div>
+    </form>
+  </main>
+
+  <script>
+    document.querySelector("#form-buku").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const bukuBaru = {
+        judul: document.querySelector("#judul").value,
+        pengarang: document.querySelector("#pengarang").value,
+        tahun: document.querySelector("#tahun").value,
+        stok: document.querySelector("#stok").value,
+        penerbit: document.querySelector("#penerbit").value,
+        deskripsi: document.querySelector("#deskripsi").value
+      };
+
+      const dataLama = JSON.parse(localStorage.getItem("dataBuku")) || [];
+      dataLama.push(bukuBaru);
+      localStorage.setItem("dataBuku", JSON.stringify(dataLama));
+
+      alert("Buku berhasil ditambahkan!");
+      window.location.href = "list.html";
+    });
+  </script>
+</body>
+</html>

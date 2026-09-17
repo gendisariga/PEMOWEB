@@ -379,3 +379,134 @@ footer {
     }
 
 }
+/* ========================================
+   JOBSHEET 5 - JAVASCRIPT
+   ======================================== */
+
+
+/* ========================================
+   HAMBURGER BUTTON
+   ======================================== */
+
+.nav-toggle-btn {
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 1.8rem;
+
+    cursor: pointer;
+
+    padding: 0.3rem 0.6rem;
+
+    border-radius: 8px;
+}
+
+
+/* ========================================
+   SEARCH BOX
+   ======================================== */
+
+.search-box {
+    width: 100%;
+
+    max-width: 500px;
+
+    padding: 0.75rem 1rem;
+
+    margin-bottom: 1.2rem;
+
+    border: 2px solid #d8b4fe;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 1rem;
+}
+
+
+.search-box:focus {
+    border-color: #8b5cf6;
+
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+}
+
+
+/* ========================================
+   ERROR VALIDASI
+   ======================================== */
+
+.error {
+    display: block;
+
+    color: #dc2626;
+
+    font-size: 0.9rem;
+
+    margin-top: 0.4rem;
+
+    font-weight: 600;
+}
+
+
+/* ========================================
+   TOMBOL HAPUS
+   ======================================== */
+
+.btn-hapus {
+    cursor: pointer;
+}
+
+
+/* ========================================
+   RESPONSIVE HAMBURGER
+   ======================================== */
+
+@media (max-width: 768px) {
+
+    .nav-toggle-btn {
+        display: block;
+    }
+
+
+    header {
+        position: relative;
+    }
+
+
+    header nav {
+        display: none;
+
+        width: 100%;
+    }
+
+
+    header nav.nav-open {
+        display: block;
+    }
+
+
+    header nav ul {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    header nav li {
+        width: 100%;
+    }
+
+
+    header nav a {
+        display: block;
+
+        width: 100%;
+    }
+
+}
