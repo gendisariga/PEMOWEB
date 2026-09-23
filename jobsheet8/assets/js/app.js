@@ -93,11 +93,11 @@ function initReceiptButtons() {
       </head>
       <body>
         <h1>Klinik Hewan Winadivet</h1>
-        <p>Struk transaksi klinik</p>
+        <p>Struk pembayaran klinik hewan</p>
         <dl>
-          <dt>Nama pelanggan</dt><dd>${cells[1].textContent}</dd>
-          <dt>Paket</dt><dd>${cells[2].textContent}</dd>
-          <dt>Berat / jumlah</dt><dd>${cells[3].textContent}</dd>
+          <dt>Nama pemilik</dt><dd>${cells[1].textContent}</dd>
+          <dt>Layanan</dt><dd>${cells[2].textContent}</dd>
+          <dt>Jumlah / berat</dt><dd>${cells[3].textContent}</dd>
           <dt>Total pembayaran</dt><dd>${cells[4].textContent}</dd>
           <dt>Status</dt><dd>${cells[5].textContent}</dd>
         </dl>

@@ -60,6 +60,11 @@ SQL);
             ('H001', 'Snowy', 'Kucing', 'Persia', 'Siti Aminah', 'Sehat'),
             ('H002', 'Max', 'Anjing', 'Golden Retriever', 'Budi Santoso', 'Perlu kontrol')");
     }
+
+    if ((int) $pdo->query('SELECT COUNT(*) FROM transaksi')->fetchColumn() === 0) {
+        $pdo->exec("INSERT INTO transaksi (pelanggan_id, paket_id, berat, total, status)
+            VALUES (1, 1, 1, 150000, 'Selesai')");
+    }
 } catch (PDOException $exception) {
     http_response_code(500);
     exit('Database lokal belum dapat digunakan. Jalankan server dengan driver SQLite PHP.');
