@@ -1,0 +1,3 @@
+<?php $title = 'Transaksi | Klinik Hewan Winadivet'; require __DIR__ . '/../includes/header.php'; ?>
+<main><section><div class="d-flex justify-content-between align-items-center mb-3"><h2>Transaksi</h2><a href="tambah.php" class="btn btn-primary">+ Tambah Transaksi</a></div><div class="table-responsive"><table class="table table-hover table-bordered"><thead><tr><th>No</th><th>Pelanggan</th><th>Paket</th><th>Berat</th><th>Total</th></tr></thead><tbody><tr><td colspan="5" class="text-center">Belum ada transaksi.</td></tr></tbody></table></div></section></main>
+<?php require __DIR__ . '/../includes/footer.php'; ?>

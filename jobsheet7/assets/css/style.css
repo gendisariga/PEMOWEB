@@ -1,0 +1,738 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* BODY */
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    color: #1f2937;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef7ff,
+            #eafcf5,
+            #fdf4e8,
+            #f4ecff
+        );
+
+    background-size: 400% 400%;
+
+    line-height: 1.6;
+
+    min-height: 100vh;
+}
+
+
+/* HEADER */
+
+header {
+    background:
+        linear-gradient(
+            90deg,
+            #123456,
+            #0f766e,
+            #0ea5a4,
+            #14b8a6
+        );
+
+    color: white;
+
+    padding: 1.2rem 2rem;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 1rem;
+
+    box-shadow:
+        0 10px 30px rgba(15, 118, 110, 0.25);
+
+    border-bottom: 3px solid rgba(255, 255, 255, 0.25);
+}
+
+
+header h1 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+
+/* NAVBAR */
+
+header nav {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    padding: 0.35rem 0.5rem;
+    backdrop-filter: blur(6px);
+}
+
+header nav ul {
+    list-style: none;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 0.5rem;
+
+    margin: 0;
+}
+
+
+header nav a {
+    color: white;
+
+    padding: 0.7rem 1rem;
+
+    border-radius: 999px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.nav-icon {
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+.dashboard-icon {
+    display: inline-block;
+    margin-right: 0.45rem;
+    color: #0f766e;
+}
+
+.stat-icon {
+    display: block;
+    margin-bottom: 0.85rem;
+    font-size: 2rem;
+    opacity: 0.9;
+}
+
+header nav a:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: #f0fdfa;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+
+/* HAMBURGER */
+
+.nav-toggle {
+    display: none;
+}
+
+
+.nav-toggle-label {
+    display: none;
+
+    font-size: 1.6rem;
+
+    color: white;
+
+    cursor: pointer;
+
+    line-height: 1;
+}
+
+
+/* MAIN */
+
+main {
+    max-width: 1100px;
+
+    margin: 2rem auto;
+
+    padding: 0 1.5rem;
+}
+
+
+/* SECTION */
+
+section {
+    background-color:
+        rgba(255, 255, 255, 0.9);
+
+    border-radius: 20px;
+
+    padding: 1.8rem;
+
+    margin-bottom: 1.8rem;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+
+    transition: 0.3s;
+}
+
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+
+section h2 {
+    color: #0f172a;
+
+    margin-bottom: 1rem;
+
+    border-left:
+        6px solid #14b8a6;
+
+    padding-left: 0.7rem;
+}
+
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.feature-card {
+    background: linear-gradient(135deg, #ffffff, #e6fffb);
+    border: 1px solid #c7f3ea;
+    border-radius: 18px;
+    padding: 1.2rem;
+    box-shadow: 0 8px 18px rgba(20, 184, 166, 0.08);
+}
+
+.feature-card h3 {
+    font-size: 1.05rem;
+    color: #0f766e;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    margin: 0;
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+
+/* STAT CARD */
+
+.stat-card {
+    padding: 2rem 1.5rem;
+
+    border-radius: 28px;
+
+    text-align: center;
+
+    color: white;
+
+    box-shadow:
+        0 18px 32px rgba(15, 23, 42, 0.12);
+
+    transition: 0.3s ease;
+
+    min-height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+.stat-card:hover {
+    transform:
+        translateY(-8px)
+        scale(1.01);
+
+    box-shadow:
+        0 24px 40px rgba(15, 23, 42, 0.18);
+}
+
+
+.stat-card h3 {
+    font-size: 1.1rem;
+
+    margin-bottom: 1.2rem;
+
+    color: white;
+
+    font-weight: 700;
+}
+
+
+.stat-card p {
+    font-size: 4rem;
+
+    font-weight: 800;
+
+    color: white;
+
+    line-height: 1;
+
+    margin: 0;
+}
+
+
+/* WARNA CARD */
+
+.stat-1 {
+    background:
+        linear-gradient(
+            135deg,
+            #ff4f81,
+            #ff8fab
+        );
+}
+
+
+.stat-2 {
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #a78bfa
+        );
+}
+
+
+.stat-3 {
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #60a5fa
+        );
+}
+
+
+.stat-4 {
+    background:
+        linear-gradient(
+            135deg,
+            #10b981,
+            #58d9ad
+        );
+}
+
+
+/* TABLE */
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+
+table {
+    width: 100%;
+}
+
+
+/* TABLE HEADER */
+
+thead {
+    background:
+        linear-gradient(
+            90deg,
+            #ff5f9e,
+            #8b5cf6,
+            #3b82f6
+        );
+
+    color: white;
+}
+
+
+/* FORM */
+
+form {
+    max-width: 650px;
+}
+
+
+form label {
+    font-weight: 600;
+
+    color: #7c3aed;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    padding: 1.5rem;
+
+    color: #6b7280;
+
+    font-weight: 500;
+
+    margin-top: 2rem;
+}
+
+
+/* LOGIN */
+
+.login-page {
+    display: grid;
+    place-items: center;
+    padding: 2rem 1rem;
+}
+
+.login-shell {
+    width: min(100%, 460px);
+    margin: 0;
+    padding: 0;
+}
+
+.login-card {
+    text-align: center;
+    margin: 0;
+    padding: 2.5rem;
+    border: 1px solid rgba(20, 184, 166, 0.2);
+}
+
+.login-brand {
+    color: #0f766e;
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.login-icon {
+    display: grid;
+    place-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin: 1.25rem auto 1rem;
+    border-radius: 50%;
+    background: #ccfbf1;
+    font-size: 2rem;
+}
+
+.login-card h1 {
+    margin-bottom: 0.35rem;
+    color: #0f172a;
+    font-size: 1.6rem;
+}
+
+.login-intro {
+    margin-bottom: 1.5rem;
+    color: #64748b;
+}
+
+.login-form {
+    max-width: none;
+    text-align: left;
+}
+
+.login-form input {
+    width: 100%;
+    margin: 0.4rem 0 1rem;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font: inherit;
+}
+
+.login-form input:focus {
+    border-color: #0f766e;
+    outline: 3px solid rgba(20, 184, 166, 0.18);
+}
+
+.login-submit {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 0;
+    border-radius: 10px;
+    background: #0f766e;
+    color: white;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.login-submit:hover {
+    background: #115e59;
+}
+
+.login-message {
+    min-height: 1.5rem;
+    margin: 0.75rem 0 0;
+    color: #0f766e;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.login-back {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #0f766e;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .nav-toggle-label {
+        display: block;
+
+        position: absolute;
+
+        right: 1.5rem;
+
+        top: 1rem;
+    }
+
+
+    header nav {
+        width: 100%;
+
+        display: none;
+    }
+
+    .nav-toggle-btn {
+        display: block;
+
+        position: absolute;
+
+        right: 1.5rem;
+
+        top: 1rem;
+    }
+
+    header nav.nav-open {
+        display: block;
+    }
+
+
+    .nav-toggle:checked ~ nav {
+        display: block;
+    }
+
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    .table-responsive {
+        margin-right: -0.4rem;
+        margin-left: -0.4rem;
+    }
+
+    table {
+        min-width: 700px;
+    }
+
+    .table-responsive .btn {
+        white-space: nowrap;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 1rem;
+    }
+
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+
+    main {
+        padding: 0 1rem;
+    }
+
+
+    section {
+        padding: 1.2rem;
+    }
+
+}
+/* ========================================
+   JOBSHEET 5 - JAVASCRIPT
+   ======================================== */
+
+
+/* ========================================
+   HAMBURGER BUTTON
+   ======================================== */
+
+.nav-toggle-btn {
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 1.8rem;
+
+    cursor: pointer;
+
+    padding: 0.3rem 0.6rem;
+
+    border-radius: 8px;
+}
+
+
+/* ========================================
+   SEARCH BOX
+   ======================================== */
+
+.search-box {
+    width: 100%;
+
+    max-width: 500px;
+
+    padding: 0.75rem 1rem;
+
+    margin-bottom: 1.2rem;
+
+    border: 2px solid #d8b4fe;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 1rem;
+}
+
+
+.search-box:focus {
+    border-color: #8b5cf6;
+
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+}
+
+
+/* ========================================
+   ERROR VALIDASI
+   ======================================== */
+
+.error {
+    display: block;
+
+    color: #dc2626;
+
+    font-size: 0.9rem;
+
+    margin-top: 0.4rem;
+
+    font-weight: 600;
+}
+
+.flash-message {
+    margin-bottom: 1.25rem;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.flash-success {
+    color: #166534;
+    background: #dcfce7;
+    border: 1px solid #86efac;
+}
+
+.flash-danger {
+    color: #991b1b;
+    background: #fee2e2;
+    border: 1px solid #fca5a5;
+}
+
+
+/* ========================================
+   TOMBOL HAPUS
+   ======================================== */
+
+.btn-hapus {
+    cursor: pointer;
+}
+
+
+/* ========================================
+   RESPONSIVE HAMBURGER
+   ======================================== */
+
+@media (max-width: 768px) {
+
+    .nav-toggle-btn {
+        display: block;
+    }
+
+
+    header {
+        position: relative;
+    }
+
+
+    header nav {
+        display: none;
+
+        width: 100%;
+    }
+
+
+    header nav.nav-open {
+        display: block;
+    }
+
+
+    header nav ul {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    header nav li {
+        width: 100%;
+    }
+
+
+    header nav a {
+        display: block;
+
+        width: 100%;
+    }
+
+}

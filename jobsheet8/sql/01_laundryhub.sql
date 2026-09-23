@@ -1,0 +1,35 @@
+CREATE TABLE IF NOT EXISTS paket (
+    id SERIAL PRIMARY KEY,
+    nama_paket VARCHAR(100) NOT NULL,
+    jenis VARCHAR(50) NOT NULL,
+    harga INTEGER NOT NULL CHECK (harga >= 0),
+    estimasi VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS pelanggan (
+    id SERIAL PRIMARY KEY,
+    no_pelanggan VARCHAR(20) NOT NULL UNIQUE,
+    nama VARCHAR(100) NOT NULL,
+    alamat VARCHAR(255) NOT NULL,
+    no_hp VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS transaksi (
+    id SERIAL PRIMARY KEY,
+    pelanggan_id INTEGER NOT NULL REFERENCES pelanggan(id),
+    paket_id INTEGER NOT NULL REFERENCES paket(id),
+    berat NUMERIC(8, 2) NOT NULL CHECK (berat > 0),
+    total INTEGER NOT NULL CHECK (total >= 0),
+    status VARCHAR(30) NOT NULL DEFAULT 'Diproses',
+    tanggal TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS hewan (
+    id SERIAL PRIMARY KEY,
+    no_hewan VARCHAR(20) NOT NULL UNIQUE,
+    nama VARCHAR(100) NOT NULL,
+    jenis VARCHAR(50) NOT NULL,
+    ras VARCHAR(80) NOT NULL,
+    pemilik VARCHAR(100) NOT NULL,
+    status VARCHAR(30) NOT NULL DEFAULT 'Sehat'
+);
