@@ -29,5 +29,6 @@ $active = $active ?? '';
         <li><a href="<?= $base ?>pelanggan/list.php">Daftar Pelanggan</a></li>
         <li><a href="<?= $base ?>hewan/list.php">Pasien Hewan</a></li>
         <li><a href="<?= $base ?>transaksi/list.php">Transaksi</a></li>
+        <li><a href="<?= $base ?>logout.php">Logout</a></li>
     </ul></nav>
 </header>
