@@ -10,7 +10,8 @@ $flash = pull_flash();
 <main><section>
 	<?php if ($flash): ?><div class="flash-message flash-<?= htmlspecialchars($flash['type']) ?>" role="alert"><?= htmlspecialchars($flash['message']) ?></div><?php endif; ?>
 	<div class="d-flex justify-content-between align-items-center mb-3"><h2>Daftar Pelanggan</h2><a href="tambah.php" class="btn btn-primary">+ Tambah Pelanggan</a></div>
-	<div class="table-responsive"><table class="table table-hover table-bordered"><thead><tr><th>No</th><th>No. Pelanggan</th><th>Nama</th><th>Alamat</th><th>No. HP</th><th>Aksi</th></tr></thead><tbody>
+	<input type="search" class="search-box" data-target="#tabel-pelanggan" placeholder="Cari pemilik atau nomor..." autocomplete="off">
+	<div class="table-responsive"><table id="tabel-pelanggan" class="table table-hover table-bordered"><thead><tr><th>No</th><th>No. Pelanggan</th><th>Nama</th><th>Alamat</th><th>No. HP</th><th>Aksi</th></tr></thead><tbody>
 	<?php if (!$pelanggan): ?><tr><td colspan="6" class="text-center">Belum ada data pelanggan.</td></tr><?php else: ?><?php foreach ($pelanggan as $index => $item): ?><tr><td><?= $index + 1 ?></td><td><?= htmlspecialchars($item['no_pelanggan']) ?></td><td><?= htmlspecialchars($item['nama']) ?></td><td><?= htmlspecialchars($item['alamat']) ?></td><td><?= htmlspecialchars($item['no_hp']) ?></td><td><button type="button" class="btn btn-outline-primary btn-sm" onclick="window.print()">Cetak</button></td></tr><?php endforeach; ?><?php endif; ?>
 	</tbody></table></div>
 </section></main>
