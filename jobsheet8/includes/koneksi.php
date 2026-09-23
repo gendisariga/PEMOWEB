@@ -46,7 +46,9 @@ SQL);
         $pdo->exec("INSERT INTO paket (nama_paket, jenis, harga, estimasi) VALUES
             ('Vaksin Rabies', 'Kesehatan', 150000, '1 hari'),
             ('Check Up Rutin', 'Kesehatan', 120000, '1 hari'),
-            ('Grooming Basic', 'Perawatan', 95000, '2 hari')");
+            ('Grooming Basic', 'Perawatan', 95000, '2 hari'),
+            ('Sterilisasi', 'Bedah', 450000, '3 hari'),
+            ('Scaling Gigi', 'Dental', 250000, '2 hari')");
     }
 
     if ((int) $pdo->query('SELECT COUNT(*) FROM pelanggan')->fetchColumn() === 0) {
