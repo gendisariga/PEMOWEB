@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
 
 $rootDir = realpath(__DIR__ . DIRECTORY_SEPARATOR . '..');
 $pageDir = realpath(dirname($_SERVER['SCRIPT_FILENAME'] ?? __FILE__));
