@@ -44,21 +44,30 @@ FROM (VALUES
     ('Scaling Gigi', 'Dental', 250000, '2 hari')
 ) AS seed(nama_paket, jenis, harga, estimasi)
 WHERE NOT EXISTS (
-    SELECT 1 FROM paket WHERE paket.nama_paket = seed.nama_paket
+    SELECT 1
+    FROM paket
+    WHERE paket.nama_paket = seed.nama_paket
 );
 
-INSERT INTO pelanggan (no_pelanggan, nama, alamat, no_hp) VALUES
+INSERT INTO pelanggan (no_pelanggan, nama, alamat, no_hp)
+VALUES
     ('P001', 'Siti Aminah', 'Malang', '081234567890'),
     ('P002', 'Budi Santoso', 'Batu', '081345678901')
 ON CONFLICT (no_pelanggan) DO NOTHING;
 
-INSERT INTO hewan (no_hewan, nama, jenis, ras, pemilik, status) VALUES
+INSERT INTO hewan (no_hewan, nama, jenis, ras, pemilik, status)
+VALUES
     ('H001', 'Snowy', 'Kucing', 'Persia', 'Siti Aminah', 'Sehat'),
     ('H002', 'Max', 'Anjing', 'Golden Retriever', 'Budi Santoso', 'Perlu kontrol')
 ON CONFLICT (no_hewan) DO NOTHING;
 
 INSERT INTO transaksi (pelanggan_id, paket_id, berat, total, status)
-SELECT pelanggan.id, paket.id, 1, paket.harga, 'Selesai'
+SELECT
+    pelanggan.id,
+    paket.id,
+    1,
+    paket.harga,
+    'Selesai'
 FROM pelanggan
 CROSS JOIN paket
 WHERE pelanggan.no_pelanggan = 'P001'
