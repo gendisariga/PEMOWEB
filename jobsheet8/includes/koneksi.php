@@ -1,10 +1,10 @@
 <?php
 
-$host = getenv('PGHOST') ?: 'ep-ancient-fog-b49op6nd-pooler.c-6.us-east-2.aws.neon.tech';
+$host = getenv('PGHOST');
 $port = getenv('PGPORT') ?: '5432';
-$database = getenv('PGDATABASE') ?: 'neondb';
-$username = getenv('PGUSER') ?: 'neondb_owner';
-$password = getenv('PGPASSWORD') ?: 'npg_xdVZEOYi0w6L';
+$database = getenv('PGDATABASE');
+$username = getenv('PGUSER');
+$password = getenv('PGPASSWORD');
 
 try {
     $pdo = new PDO(
@@ -19,6 +19,6 @@ try {
 } catch (PDOException $exception) {
     http_response_code(500);
     exit(
-        'Koneksi PostgreSQL gagal. Periksa service, database, driver pdo_pgsql, serta PGUSER dan PGPASSWORD.'
+        'Koneksi PostgreSQL gagal: ' . $exception->getMessage()
     );
 }
