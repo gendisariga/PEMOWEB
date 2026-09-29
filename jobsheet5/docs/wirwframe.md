@@ -1,4 +1,4 @@
-# Wireframe & User Flow — SIMPUS-Mini
+# Wireframe & User Flow — Klinik Hewan Winadivet
 
 Sub-CPMK: Merancang UI/UX aplikasi (proyek).
 
@@ -28,7 +28,7 @@ Halaman yang sudah ada (Beranda, Daftar/Tambah Buku, Daftar/Tambah Anggota — J
 
 ```
 +--------------------------------------+
-|              SIMPUS-Mini             |
+|              Klinik Hewan Winadivet             |
 |--------------------------------------|
 |                                      |
 |        [ Login Petugas ]            |
@@ -46,7 +46,7 @@ Halaman yang sudah ada (Beranda, Daftar/Tambah Buku, Daftar/Tambah Anggota — J
 
 ```
 +-----------------------------------------------------+
-| SIMPUS-Mini      Beranda | Buku | Anggota | Peminjaman | (Nama Petugas) Logout |
+| Klinik Hewan Winadivet      Beranda | Buku | Anggota | Peminjaman | (Nama Petugas) Logout |
 |-------------------------------------------------------|
 |  [Total Buku]   [Total Anggota]   [Sedang Dipinjam]    |
 |                                                         |

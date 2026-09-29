@@ -1,5 +1,5 @@
 // ========================================
-// SIMPUS-Mini
+// Klinik Hewan Winadivet
 // Jobsheet 5 - JavaScript DOM & Event
 // ========================================
 

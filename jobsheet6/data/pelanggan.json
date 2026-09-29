@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "no_pelanggan": "H001",
+    "nama": "Snowy",
+    "alamat": "Kucing",
+    "no_hp": "Siti Aminah"
+  },
+  {
+    "id": 2,
+    "no_pelanggan": "H002",
+    "nama": "Max",
+    "alamat": "Anjing",
+    "no_hp": "Budi Santoso"
+  },
+  {
+    "id": 3,
+    "no_pelanggan": "H003",
+    "nama": "Milo",
+    "alamat": "Kelinci",
+    "no_hp": "Andi Saputra"
+  },
+  {
+    "id": 4,
+    "no_pelanggan": "H004",
+    "nama": "Luna",
+    "alamat": "Kucing",
+    "no_hp": "Rina Putri"
+  }
+]

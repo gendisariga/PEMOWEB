@@ -1,5 +1,5 @@
 // ========================================
-// SIMPUS-Mini
+// Klinik Hewan Winadivet
 // Jobsheet 5 - JavaScript DOM & Event
 // ========================================
 
@@ -11,14 +11,21 @@
 function initNavToggle() {
 
     const toggleBtn = document.getElementById("nav-toggle-btn");
+    const toggleInput = document.getElementById("nav-toggle");
     const nav = document.querySelector("header nav");
 
     // Guard clause
-    if (!toggleBtn || !nav) return;
+    if (!nav) return;
 
-    toggleBtn.addEventListener("click", function () {
+    toggleBtn?.addEventListener("click", function () {
 
         nav.classList.toggle("nav-open");
+
+    });
+
+    toggleInput?.addEventListener("change", function () {
+
+        nav.classList.toggle("nav-open", toggleInput.checked);
 
     });
 }

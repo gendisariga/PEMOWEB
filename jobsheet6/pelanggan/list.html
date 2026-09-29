@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data Hewan | PawCare</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Klinik Hewan Winadivet</h1>
+        <button type="button" id="nav-toggle-btn" class="nav-toggle-btn">☰</button>
+        <nav>
+            <ul>
+                <li><a href="../index.html"><span class="nav-icon">🏠</span>Beranda</a></li>
+                <li><a href="../paket/list.html"><span class="nav-icon">🩺</span>Layanan</a></li>
+                <li><a href="list.html"><span class="nav-icon">🐾</span>Data Hewan</a></li>
+                <li><a href="tambah.html"><span class="nav-icon">➕</span>Tambah Hewan</a></li>
+                <li><a href="../transaksi/list.html"><span class="nav-icon">📅</span>Jadwal</a></li>
+                <li><a href="../login.html" class="login-nav-link"><span class="nav-icon">🔐</span>Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                <h2 class="mb-0">Data Hewan Pasien</h2>
+                <a href="tambah.html" class="btn btn-primary">+ Tambah Hewan</a>
+            </div>
+
+            <input type="text" id="cari-pelanggan" class="search-box" data-target="#tabel-pelanggan" placeholder="🔎 Cari hewan...">
+
+            <div class="table-responsive">
+                <table id="tabel-pelanggan" class="table table-hover table-bordered align-middle">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>No. Hewan</th>
+                            <th>Nama Hewan</th>
+                            <th>Jenis</th>
+                            <th>Nama Pemilik</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="6" class="text-center">Memuat data hewan...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Klinik Hewan Winadivet &mdash; Sistem Klinik Hewan</p>
+    </footer>
+
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/pelanggan.js"></script>
+</body>
+
+</html>

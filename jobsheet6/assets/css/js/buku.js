@@ -1,5 +1,5 @@
 // ========================================
-// SIMPUS-Mini
+// Klinik Hewan Winadivet
 // Jobsheet 6 - Fetch API & JSON
 // Data Buku
 // ========================================
@@ -84,7 +84,7 @@ async function loadBuku() {
 
         // Sembunyikan loading
         if (loading) {// ========================================
-// SIMPUS-Mini
+// Klinik Hewan Winadivet
 // Jobsheet 6 - Fetch API & JSON
 // Data Buku
 // ========================================

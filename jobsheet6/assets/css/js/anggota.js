@@ -1,5 +1,5 @@
 // ========================================
-// SIMPUS-Mini
+// Klinik Hewan Winadivet
 // Jobsheet 6 - Fetch API & JSON
 // Data Anggota
 // ========================================

@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "nama_paket": "Vaksin Rabies",
+    "jenis": "Kesehatan",
+    "harga": 150000,
+    "estimasi": "1 hari"
+  },
+  {
+    "id": 2,
+    "nama_paket": "Check Up Rutin",
+    "jenis": "Kesehatan",
+    "harga": 120000,
+    "estimasi": "1 hari"
+  },
+  {
+    "id": 3,
+    "nama_paket": "Grooming Basic",
+    "jenis": "Perawatan",
+    "harga": 95000,
+    "estimasi": "2 hari"
+  },
+  {
+    "id": 4,
+    "nama_paket": "Sterilisasi",
+    "jenis": "Bedah",
+    "harga": 450000,
+    "estimasi": "3 hari"
+  },
+  {
+    "id": 5,
+    "nama_paket": "Scalling Gigi",
+    "jenis": "Dentist",
+    "harga": 250000,
+    "estimasi": "2 hari"
+  }
+]
