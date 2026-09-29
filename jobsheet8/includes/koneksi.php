@@ -3,7 +3,7 @@ $host = getenv('PGHOST') ?: 'ep-ancient-fog-b49op6nd-pooler.c-6.us-east-2.aws.ne
 $port = getenv('PGPORT') ?: '5432';
 $database = getenv('PGDATABASE') ?: 'neondb';
 $username = getenv('PGUSER') ?: 'neondb_owner';
-$password = getenv('PGPASSWORD') ?: '';
+$password = getenv('PGPASSWORD') ?: 'npg_xdVZEOYi0w6L';
 
 try {
     $pdo = new PDO(
