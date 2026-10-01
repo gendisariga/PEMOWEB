@@ -17,4 +17,5 @@ Write-Host 'Tekan Ctrl+C untuk menghentikan server.' -ForegroundColor Yellow
 php -d "extension_dir=$phpDir\ext" `
     -d extension=php_pdo_pgsql.dll `
     -S localhost:8000 `
-    -t $PSScriptRoot
+    -t $PSScriptRoot `
+    $PSScriptRoot\router.php
