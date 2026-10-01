@@ -72,6 +72,28 @@ function initReceiptButtons() {
 
     if (!receiptWindow) return;
 
+    const escapeHtml = function (value) {
+      return value.replace(/[&<>'"]/g, function (character) {
+        return {
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          "'": '&#39;',
+          '"': '&quot;'
+        }[character];
+      });
+    };
+
+    const transaction = {
+      id: button.dataset.id || '-',
+      date: button.dataset.tanggal || '-',
+      owner: escapeHtml(cells[1].textContent.trim()),
+      service: escapeHtml(cells[2].textContent.trim()),
+      amount: escapeHtml(cells[3].textContent.trim()),
+      total: escapeHtml(cells[4].textContent.trim()),
+      status: escapeHtml(cells[5].textContent.trim())
+    };
+
     receiptWindow.document.write(`
       <!DOCTYPE html>
       <html lang="id">
@@ -79,32 +101,44 @@ function initReceiptButtons() {
         <meta charset="UTF-8">
         <title>Struk Klinik Hewan Winadivet</title>
         <style>
-          body { font-family: Arial, sans-serif; padding: 24px; color: #172033; }
-          h1 { margin: 0 0 4px; color: #0f766e; font-size: 24px; }
-          p { margin: 4px 0 18px; color: #64748b; }
-          dl { border-top: 1px solid #cbd5e1; border-bottom: 1px solid #cbd5e1; padding: 12px 0; }
-          dt { color: #64748b; font-size: 12px; margin-top: 10px; }
-          dd { margin: 2px 0 0; font-weight: 700; }
-          .thanks { margin-top: 22px; text-align: center; color: #0f766e; font-weight: 700; }
+          @page { size: A5; margin: 12mm; }
+          * { box-sizing: border-box; }
+          body { margin: 0; font-family: Arial, sans-serif; color: #172033; }
+          .receipt { max-width: 380px; margin: 0 auto; }
+          header { padding-bottom: 14px; border-bottom: 2px solid #0f766e; }
+          h1 { margin: 0 0 3px; color: #0f766e; font-size: 22px; }
+          header p { margin: 0; color: #64748b; font-size: 12px; }
+          .meta { display: flex; justify-content: space-between; gap: 12px; margin: 14px 0; color: #64748b; font-size: 11px; }
+          dl { margin: 0; border-top: 1px solid #cbd5e1; border-bottom: 1px solid #cbd5e1; padding: 10px 0; }
+          dt { margin-top: 9px; color: #64748b; font-size: 11px; }
+          dt:first-child { margin-top: 0; }
+          dd { margin: 2px 0 0; font-weight: 700; font-size: 14px; }
+          .total { display: flex; justify-content: space-between; margin-top: 14px; font-size: 16px; font-weight: 700; }
+          .thanks { margin-top: 24px; text-align: center; color: #0f766e; font-size: 12px; font-weight: 700; }
+          @media print { .receipt { max-width: none; } }
         </style>
       </head>
       <body>
-        <h1>Klinik Hewan Winadivet</h1>
-        <p>Struk pembayaran klinik hewan</p>
-        <dl>
-          <dt>Nama pemilik</dt><dd>${cells[1].textContent}</dd>
-          <dt>Layanan</dt><dd>${cells[2].textContent}</dd>
-          <dt>Jumlah / berat</dt><dd>${cells[3].textContent}</dd>
-          <dt>Total pembayaran</dt><dd>${cells[4].textContent}</dd>
-          <dt>Status</dt><dd>${cells[5].textContent}</dd>
-        </dl>
-        <div class="thanks">Terima kasih telah menggunakan Klinik Hewan Winadivet.</div>
+        <article class="receipt">
+          <header><h1>Klinik Hewan Winadivet</h1><p>Struk pembayaran kunjungan klinik</p></header>
+          <div class="meta"><span>No. transaksi: ${transaction.id}</span><span>${transaction.date}</span></div>
+          <dl>
+            <dt>Nama pemilik</dt><dd>${transaction.owner}</dd>
+            <dt>Layanan</dt><dd>${transaction.service}</dd>
+            <dt>Berat / jumlah</dt><dd>${transaction.amount}</dd>
+            <dt>Status</dt><dd>${transaction.status}</dd>
+          </dl>
+          <div class="total"><span>Total pembayaran</span><span>${transaction.total}</span></div>
+          <div class="thanks">Terima kasih telah menggunakan layanan kami.</div>
+        </article>
       </body>
       </html>
     `);
     receiptWindow.document.close();
-    receiptWindow.focus();
-    receiptWindow.print();
+    receiptWindow.setTimeout(function () {
+      receiptWindow.focus();
+      receiptWindow.print();
+    }, 300);
   });
 }
 
