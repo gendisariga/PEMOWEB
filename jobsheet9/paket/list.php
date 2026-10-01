@@ -12,7 +12,7 @@ $offset = ($page - 1) * $perPage;
 $where = '';
 $params = [];
 if ($query !== '') {
-    $where = ' WHERE nama_paket ILIKE :query OR jenis ILIKE :query OR estimasi ILIKE :query';
+	$where = ' WHERE LOWER(nama_paket) LIKE LOWER(:query) OR LOWER(jenis) LIKE LOWER(:query) OR LOWER(estimasi) LIKE LOWER(:query)';
     $params[':query'] = '%' . $query . '%';
 }
 

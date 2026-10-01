@@ -1,6 +1,6 @@
 # Jobsheet 9 - CRUD Klinik Hewan Winadivet
 
-Aplikasi menggunakan PostgreSQL Neon melalui PDO. PHP harus memuat ekstensi `pdo_pgsql`.
+Aplikasi menggunakan SQLite lokal melalui PDO. PHP harus memuat ekstensi `pdo_sqlite`.
 
 ## Menyiapkan database dan menjalankan
 
@@ -10,13 +10,7 @@ Buka PowerShell di folder utama proyek `js3,4,5`, lalu jalankan:
 powershell -ExecutionPolicy Bypass -File ".\jobsheet9\run.ps1"
 ```
 
-Pada penggunaan pertama, masukkan password Neon. Password disimpan terenkripsi oleh Windows di komputer ini, sehingga penggunaan berikutnya tidak perlu mengetik ulang. Jika password Neon diganti, jalankan:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File ".\jobsheet9\run.ps1" -ResetPassword
-```
-
-Biarkan terminal server tetap terbuka, lalu buka `http://localhost:8000/index.php`.
+Tidak perlu memasukkan password database. Database klinik tersedia di `data/clinic.sqlite`. Biarkan terminal server tetap terbuka, lalu buka `http://localhost:8000/index.php`.
 
 ## Fitur Jobsheet 9
 
