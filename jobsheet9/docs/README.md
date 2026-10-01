@@ -7,15 +7,7 @@ Aplikasi menggunakan PostgreSQL Neon melalui PDO. PHP harus memuat ekstensi `pdo
 Buka PowerShell di folder utama proyek `js3,4,5`, lalu jalankan:
 
 ```powershell
-$phpDir = Split-Path (Get-Command php).Source
-$env:PGHOST = 'ep-ancient-fog-b49op6nd-pooler.c-6.us-east-2.aws.neon.tech'
-$env:PGPORT = '5432'
-$env:PGDATABASE = 'neondb'
-$env:PGUSER = 'neondb_owner'
-$securePassword = Read-Host 'Password Neon' -AsSecureString
-$env:PGPASSWORD = [System.Net.NetworkCredential]::new('', $securePassword).Password
-
-php -d "extension_dir=$phpDir\ext" -d extension=php_pdo_pgsql.dll -S localhost:8000 -t .\jobsheet9
+powershell -ExecutionPolicy Bypass -File ".\jobsheet9\run.ps1"
 ```
 
 Masukkan password Neon saat diminta; password hanya disimpan di environment terminal saat itu. Biarkan terminal server tetap terbuka, lalu buka `http://localhost:8000/index.php`.
