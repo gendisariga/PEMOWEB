@@ -10,7 +10,13 @@ Buka PowerShell di folder utama proyek `js3,4,5`, lalu jalankan:
 powershell -ExecutionPolicy Bypass -File ".\jobsheet9\run.ps1"
 ```
 
-Masukkan password Neon saat diminta; password hanya disimpan di environment terminal saat itu. Biarkan terminal server tetap terbuka, lalu buka `http://localhost:8000/index.php`.
+Pada penggunaan pertama, masukkan password Neon. Password disimpan terenkripsi oleh Windows di komputer ini, sehingga penggunaan berikutnya tidak perlu mengetik ulang. Jika password Neon diganti, jalankan:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File ".\jobsheet9\run.ps1" -ResetPassword
+```
+
+Biarkan terminal server tetap terbuka, lalu buka `http://localhost:8000/index.php`.
 
 ## Fitur Jobsheet 9
 

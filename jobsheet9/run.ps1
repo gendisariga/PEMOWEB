@@ -1,3 +1,7 @@
+param(
+    [switch]$ResetPassword
+)
+
 $ErrorActionPreference = 'Stop'
 
 $phpPath = (Get-Command php -ErrorAction Stop).Source
@@ -8,8 +12,21 @@ $env:PGPORT = '5432'
 $env:PGDATABASE = 'neondb'
 $env:PGUSER = 'neondb_owner'
 
-$securePassword = Read-Host 'Password Neon' -AsSecureString
-$env:PGPASSWORD = [System.Net.NetworkCredential]::new('', $securePassword).Password
+$credentialPath = Join-Path $PSScriptRoot '.neon-credential.xml'
+
+if ($ResetPassword -and (Test-Path $credentialPath)) {
+    Remove-Item $credentialPath -Force
+}
+
+if (Test-Path $credentialPath) {
+    $credential = Import-Clixml $credentialPath
+} else {
+    $securePassword = Read-Host 'Password Neon (disimpan terenkripsi di komputer ini)' -AsSecureString
+    $credential = [System.Management.Automation.PSCredential]::new($env:PGUSER, $securePassword)
+    $credential | Export-Clixml $credentialPath
+}
+
+$env:PGPASSWORD = $credential.GetNetworkCredential().Password
 
 Write-Host 'Jobsheet 9 berjalan di http://localhost:8000' -ForegroundColor Green
 Write-Host 'Tekan Ctrl+C untuk menghentikan server.' -ForegroundColor Yellow
