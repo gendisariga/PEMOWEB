@@ -33,16 +33,6 @@ if (Test-Path $credentialPath) {
 
 $env:PGPASSWORD = $credential.GetNetworkCredential().Password
 
-$testScript = '$dsn = "pgsql:host=" . getenv("PGHOST") . ";port=" . getenv("PGPORT") . ";dbname=" . getenv("PGDATABASE") . ";sslmode=require"; try { new PDO($dsn, getenv("PGUSER"), getenv("PGPASSWORD")); exit(0); } catch (Throwable $exception) { exit(1); }'
-& php -d "extension_dir=$phpDir\ext" -d extension=php_pdo_pgsql.dll -r $testScript
-
-if ($LASTEXITCODE -ne 0) {
-    Remove-Item $credentialPath -Force -ErrorAction SilentlyContinue
-    Write-Host 'Password tersimpan ditolak oleh Neon. Masukkan password Neon yang baru.' -ForegroundColor Red
-    $credential = Read-NeonCredential
-    $env:PGPASSWORD = $credential.GetNetworkCredential().Password
-}
-
 Write-Host 'Jobsheet 9 berjalan di http://localhost:8000' -ForegroundColor Green
 Write-Host 'Tekan Ctrl+C untuk menghentikan server.' -ForegroundColor Yellow
 
